@@ -26,4 +26,4 @@
 
 ▷ [Trello](https://trello.com/b/UajPSgRm/e-commerce)
 
-▷ [Orf](https://github.com/Ecommerce-99)
+▷ [Org](https://github.com/Ecommerce-99)
