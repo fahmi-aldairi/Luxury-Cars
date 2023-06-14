@@ -1,18 +1,36 @@
 /////////////////
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import { HashLink } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
+// import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
+import { ProdContext } from "./productContext";
 
 function Gallery({ posts, loading }) {
   // console.log(posts);
+  const navigate = useNavigate("/");
   const [carId, setCarId] = useState();
   const [carImg, setCarImg] = useState();
   const [words, setWords] = useState();
   const [selectedCars, setSelectedCars] = useState(posts);
+  const { getpro, setGetPro } = useContext(ProdContext);
+
   const cars = posts;
+  const HandleProductAdded = (event) => {
+    event.preventDefault();
+    const products = JSON.parse(localStorage.getItem("currentproduct")) || [];
+    const product = posts.find(
+      (prod) => prod.carImg === carImg && prod.words === words
+    );
+    if (product) {
+      localStorage.setItem("currentproduct", JSON.stringify(posts));
+      setGetPro(true);
+      }
+  };
+
   // console.log(cars);
   const onSearch = (event) => {
     const filteredCars = cars.filter((car) => {
@@ -156,12 +174,13 @@ function Gallery({ posts, loading }) {
                         className="btn btn-outline-dark flex-shrink-0"
                         type="button"
                         fdprocessedid="qzga4"
-                        onClick={() => {
-                          localStorage.setItem("car", JSON.stringify(car));
-                        }}
+                        onClick={HandleProductAdded}
+                        // onClick={() => {
+                        //   localStorage.setItem("car", JSON.stringify(car));
+                        // }}
                       >
                         <i className="bi-cart-fill me-1" />
-                        Buy
+                        Add to cart
                       </button>
                     </HashLink>
                   </div>

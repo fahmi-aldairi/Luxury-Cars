@@ -420,7 +420,7 @@ const Main = () => {
               Check Latest Discount Offers with Best Deals on New Cars
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-center mb-4 mb-lg-3">
-              <Link to="discount">
+              <HashLink to="/Pagination/#">
                 <button
                   className="btn btn-light fw-bold flex-shrink-0"
                   type="button"
@@ -429,7 +429,7 @@ const Main = () => {
                   <i className="bi-cart-fill me-1" />
                   View Deals
                 </button>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>

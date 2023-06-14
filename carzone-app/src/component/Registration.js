@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -55,8 +56,14 @@ const Registration = () => {
       setEmail("");
       setPassword("");
     } else {
-      setErrorMsg("Invalid email or password");
-    }
+      setErrorMsg(
+        `${Swal.fire({
+          title: "<strong>user isn't exist, please SignUp</strong>",
+          color: "red",
+        })}`
+        );
+        navigate("/SignUp/#");
+      }
   };
 
   return (
@@ -96,7 +103,7 @@ const Registration = () => {
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {ErrorMsg && <p style={{ color: "red" }}>{ErrorMsg}</p>}
+              {ErrorMsg}
 
               <Link style={{ textDecoration: "none" }} to="*">
                 Forgot Password?

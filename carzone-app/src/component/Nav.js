@@ -37,7 +37,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               <Link smooth to="/Pagination" className="nav-link  text-dark">
-                GALLERY
+                Products
               </Link>
             </li>
             <li className="nav-item">

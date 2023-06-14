@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import Payment from "./Payment";
 import HeroCart from "./heroCart";
 import { AuthContext } from "./AuthContext";
 import { HashLink } from "react-router-hash-link";
@@ -79,14 +78,25 @@ function Cart() {
         </div>
       )}
 
-      {auth && Car && (
-        <div>
-          <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 className="section-title mt-5  text-center text-primary px-3 mb-2 fs-5 fs-md-6 fs-lg-7 fw-bold">
-              Payment Information
-            </h6>
-          </div>
-          <Payment />
+      {!auth && Car && (
+        // <div>
+        //   <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+        //     <h6 className="section-title mt-5  text-center text-primary px-3 mb-2 fs-5 fs-md-6 fs-lg-7 fw-bold">
+        //       Sign Up
+        //     </h6>
+        //   </div>
+        //   <Payment />
+        // </div>
+        <div className="container d-flex flex-column align-items-center">
+          <div className="mb-3">Please, Sign in to Complete payment</div>
+          <HashLink smooth to="/Registration/#">
+            <button
+              className="btn btn-danger mb-5"
+              onClick={() => handleRemoveItem(Car.id)}
+            >
+              signin
+            </button>
+          </HashLink>
         </div>
       )}
     </>

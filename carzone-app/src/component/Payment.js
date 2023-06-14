@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Swal from "sweetalert2";
+import Gallery from "./Gallery";
 
 function Payment() {
   const [tab, setTab] = useState("creditCard");
@@ -24,7 +25,7 @@ function Payment() {
   });
 
   const [Car, setCar] = useState(
-    JSON.parse(localStorage.getItem("car")) || undefined
+    JSON.parse(localStorage.getItem("car"))
   );
 
   function handleFormSubmit(event) {
@@ -276,7 +277,7 @@ function Payment() {
                             text: "Are you sure you want to proceed with this payment?",
                             icon: "warning",
                             showCancelButton: true,
-                            html: `Your order is a car type ${Car.type} and its price is ${Car.price} a charge of 100 JD will be added to it And you will pay a deposit of 500 JD`,
+                            html: `Your order is a car type ${Car.type} and its price is ${Car.price} a charge of 100 JD will be added to it And you will pay a deposit of 500 JD we will contact us`,
                             confirmButtonText: "Yes, proceed to payment",
                             cancelButtonText: "Cancel",
                           }).then((result) => {

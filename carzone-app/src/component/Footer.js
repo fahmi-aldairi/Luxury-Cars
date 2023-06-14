@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../Images/logo.png";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 import "./home.css";
 
 const Footer = () => {
@@ -58,19 +60,19 @@ const Footer = () => {
                   {/* Links */}
 
                   <p>
-                    <Link to="/" className="text-reset  fw-bold">
+                    <HashLink to="/#" className="text-reset  fw-bold">
                       HOME
-                    </Link>
+                    </HashLink>
                   </p>
                   <p>
-                    <Link to="Gallery" className="text-reset fw-bold">
+                    <HashLink to="/Pagination/#" className="text-reset fw-bold">
                       GALLERY
-                    </Link>
+                    </HashLink>
                   </p>
                   <p>
-                    <Link to="About" className="text-reset fw-bold">
+                    <HashLink to="/About/#" className="text-reset fw-bold">
                       ABOUT
-                    </Link>
+                    </HashLink>
                   </p>
                 </div>
                 {/* Grid column */}
@@ -79,25 +81,18 @@ const Footer = () => {
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                   {/* Links */}
                   <h6 className="text-uppercase fw-bold mb-4">CARS</h6>
+
                   <p>
-                    <Link
-                      to="/Products"
-                      className="text-reset text-decoration-none"
-                    >
-                      MERCEDES
-                    </Link>
-                  </p>
-                  <p>
-                    <Link
-                      to="/Products"
+                    <HashLink
+                      to="/Pagination/#"
                       className="text-reset text-decoration-none"
                     >
                       TOYOTA
-                    </Link>
+                    </HashLink>
                   </p>
                   <p>
                     <Link
-                      to="/Products"
+                      to="/Pagination/#"
                       className="text-reset text-decoration-none"
                     >
                       BMW
@@ -105,10 +100,10 @@ const Footer = () => {
                   </p>
                   <p>
                     <Link
-                      to="/Products"
+                      to="/Pagination/#"
                       className="text-reset text-decoration-none"
                     >
-                      HONDA
+                      HYUNDAI
                     </Link>
                   </p>
                 </div>
@@ -120,10 +115,15 @@ const Footer = () => {
                   <p>
                     <i className="fas fa-home me-3  text-dark" /> Zarqa, Jordan
                   </p>
-                  <p>
-                    <i className="fas fa-envelope me-3  text-dark" />
-                    Luxurycars@gmail.com
-                  </p>
+                  <HashLink
+                    style={{ textDecoration: "none", color: "#6c757e" }}
+                    to="/Contact/#"
+                  >
+                    <p>
+                      <i className="fas fa-envelope me-3  text-dark" />
+                      Luxurycars@gmail.com
+                    </p>
+                  </HashLink>
                   <p>
                     <i className="fas fa-phone me-3  text-dark" /> + 962 077 567
                     88
